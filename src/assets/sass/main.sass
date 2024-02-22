@@ -1,0 +1,132 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss'
+img 
+    max-width: 100%
+    max-height: 100%
+
+.hasimage
+    max-height: 100vh
+    text-align: center
+    position: relative
+
+.fleche
+  margin: 0
+  top: 50%
+  position: relative
+  cursor: pointer
+  
+.home
+  margin: 0
+  top: 2vh
+  left: 2vw
+  position: absolute
+  max-width: 6.33333333vw
+  cursor: pointer
+
+.gal
+    background-color: #202124
+    height:100vh
+    position: relative
+
+.perso
+    position: absolute
+    z-index: 3
+    max-width: 30vw !important
+    max-height: 50vh
+    bottom: 0
+    overflow: hidden
+    right: 5vw
+
+.bulle
+    animation: bulle 0.5s
+
+.bulle1
+    position: absolute
+    z-index: 3
+    max-width: 50vw !important
+    max-height: 50vh
+    bottom: 30vh
+    overflow: hidden
+    right: 15vw
+    text-align: right
+    animation: bulle1 0.5s
+
+.x
+    max-height: 5vh
+    cursor: pointer
+
+.animperso
+    cursor: pointer
+    margin-top: 30vh
+    animation: animperso 0.5s
+
+.animperso1
+    margin-top: 0vh
+    animation: animperso1 1s
+
+.animpersostart
+    cursor: pointer
+    margin-top: 30vh
+
+.black
+    position: absolute
+    height: 100vh
+    width: 100vw
+    background-color: black
+    opacity: 0.7
+    z-index: 2
+    animation: black 0.5s
+
+.quizz
+    max-width: 80%
+    margin-top: 5%
+
+.reponse
+    max-width: 80%
+    margin-top: 5%
+    cursor: pointer
+
+@keyframes black
+    0%
+        opacity: 0
+    100%
+        opacity: 0.7
+
+@keyframes animperso1
+    0%
+        margin-top: 30vh
+    100%
+        margin-top: 0vh
+
+@keyframes animperso
+    0%
+        margin-top: 0vh
+    100%
+        margin-top: 30vh
+
+@keyframes bulle1
+    0%
+        bottom: 15vh
+        opacity: 0
+    100%
+        bottom: 30vh
+        opacity: 1
+
+@keyframes bulle
+    0%
+        bottom: 30vh
+        opacity: 1
+    100%
+        bottom: 15vh
+        opacity: 0
+
+.v-enter-active
+.v-leave-active 
+  transition: opacity 0.7s ease
+
+.v-enter-from
+.v-leave-to 
+  opacity: 0
+
+
+
+        

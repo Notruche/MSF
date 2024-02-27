@@ -12107,6 +12107,18 @@ img {
   width: 100%;
 }
 
+.fondu3 {
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  background-image: url("../../../public/images/Fummeti-Comic-ZC_16.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+
 .warning {
   left: 0;
   top: 0;
@@ -12230,8 +12242,17 @@ img {
   background-image: url("../../../public/images/Fummeti-Comic-ZC_17.jpg");
 }
 
+.test3-leave-active {
+  transition: background-image 3s ease;
+}
+
+.test3-leave-to {
+  background-image: url("../../../public/images/Photos/Photo-P16.png");
+}
+
 .carte-enter-active {
   transition: background-image 2s ease;
+  transition-delay: 2s;
 }
 
 .carte-enter-from {

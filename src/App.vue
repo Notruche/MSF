@@ -12,7 +12,7 @@
     <img src="../public/images/bulle4.png" v-if="i==14">
     <img src="../public/images/bulle5.png" v-if="i==15">
     <img src="../public/images/bulle6.png" v-if="i==16">
-    <img src="../public/images/bulle7.png" v-if="i==27">
+    <img src="../public/images/bulle7.png" v-if="i==29">
   </div>
 </Transition>
   <div class="perso" v-if="i==1">
@@ -30,7 +30,7 @@
     <img src="../public/images/portrait3.png" :class="{ animperso: abled }" v-on:click="warnDisabled()" v-if="abled">
     <img src="../public/images/portrait3cursor.png" :class="{ animpersostart: abled==false }" v-on:click="warnDisabled()" v-if="abled==false && disabled==false">
   </div>
-  <div class="perso" v-if="i==27">
+  <div class="perso" v-if="i==29">
     <img src="../public/images/portrait4.png" :class="{ animperso1: disabled }" v-if="disabled">  
     <img src="../public/images/portrait4.png" :class="{ animperso: abled }" v-on:click="warnDisabled()" v-if="abled">
     <img src="../public/images/portrait4cursor.png" :class="{ animpersostart: abled==false }" v-on:click="warnDisabled()" v-if="abled==false && disabled==false">
@@ -44,8 +44,8 @@
 <div class="row container-fluid m-0 p-0">
   <div class="col-1 hasimage">
     <img src="../public/images/ui/home.png" alt="" class="home"
-    v-on:click="homepage()" v-if="i!=3 && i!=21">
-    <img src="../public/images/ui/flecheg.png" class="fleche" alt="" v-on:click="prevpage()" v-if="i>1 && i!=3 && i!=21">
+    v-on:click="homepage()" v-if="i!=3 && i!=21 && i!=23">
+    <img src="../public/images/ui/flecheg.png" class="fleche" alt="" v-on:click="prevpage()" v-if="i>1 && i!=3 && i!=21 && i!=23">
   </div>
   <div class="col-10 hasimage gal">
     <div class="warning" v-if="warn">
@@ -92,19 +92,30 @@
     <img v-if="i == 16" src="../public/images/Fummeti-Comic-ZC_13.jpg" alt="">
     <img v-if="i == 17" src="../public/images/Fummeti-Comic-ZC_14.jpg" alt="">
     <img v-if="i == 18" src="../public/images/Fummeti-Comic-ZC_15.jpg" alt="">
-    <img v-if="i == 19" src="../public/images/Fummeti-Comic-ZC_16.jpg" alt="">
-    <Transition name="test2">
-      <div class="fondu2" v-if="i == 20">  </div>
+    <div v-if="i == 19" class="hasimage gal">
+    <img src="../public/images/quizz/titre3.png" class="quizz"> <br>
+    <img src="../public/images/quizz/reponse3a.png" class="reponse" v-if="quizz" v-on:click="quizzrep()">
+    <img src="../public/images/quizz/reponse3b.png" class="reponse" v-if="quizz" v-on:click="quizzrep()">
+    <img src="../public/images/quizz/reponse3c.png" class="reponse" v-if="quizz" v-on:click="quizzrep()">
+    <img src="../public/images/quizz/reponse3a2.png" class="quizz" v-if="reponse">
+    <img src="../public/images/quizz/reponse3b2.png" class="quizz" v-if="reponse">
+    <img src="../public/images/quizz/reponse3c2.png" class="quizz" v-if="reponse">
+    </div>
+    <Transition name="test3">
+    <div class="fondu3" v-if="i == 20">  </div>
   </Transition>
-    <img v-if="i == 22" src="../public/images/Fummeti-Comic-ZC_17.jpg" alt="">
-    <img v-if="i == 23" src="../public/images/Fummeti-Comic-ZC_18.jpg" alt="">
-    <img v-if="i == 24" src="../public/images/Fummeti-Comic-ZC_19.jpg" alt="">
-    <img v-if="i == 25" src="../public/images/Fummeti-Comic-ZC_20.jpg" alt="">
-    <img v-if="i == 26" src="../public/images/Fummeti-Comic-ZC_21.jpg" alt="">
-    <img v-if="i == 27" src="../public/images/Fummeti-Comic-ZC_22.jpg" alt="">
+    <Transition name="test2">
+      <div class="fondu2" v-if="i == 22">  </div>
+  </Transition>
+    <img v-if="i == 24" src="../public/images/Fummeti-Comic-ZC_17.jpg" alt="">
+    <img v-if="i == 25" src="../public/images/Fummeti-Comic-ZC_18.jpg" alt="">
+    <img v-if="i == 26" src="../public/images/Fummeti-Comic-ZC_19.jpg" alt="">
+    <img v-if="i == 27" src="../public/images/Fummeti-Comic-ZC_20.jpg" alt="">
+    <img v-if="i == 28" src="../public/images/Fummeti-Comic-ZC_21.jpg" alt="">
+    <img v-if="i == 29" src="../public/images/Fummeti-Comic-ZC_22.jpg" alt="">
   </div>
   <div class="col-1 hasimage">
-  <img src="../public/images/ui/fleched.png" alt="" class="fleche" v-on:click="nextpage()" v-if="i<27 && i!=3 && i!=21">
+  <img src="../public/images/ui/fleched.png" alt="" class="fleche" v-on:click="nextpage()" v-if="i<29 && i!=3 && i!=21 && i!=23">
   </div>
 </div>
 </div>
@@ -159,6 +170,15 @@ export default {
       this.reponse = false
     }, 3000);
       }
+      if(that.i == 23){
+        setTimeout(function(){
+      that.i += 1
+      console.log(that.i)
+      this.abled = false
+      this.quizz = true
+      this.reponse = false
+    }, 3000);
+      }
     },
     prevpage() {
       var that = this
@@ -177,6 +197,13 @@ export default {
       this.reponse = false
     }
     if(that.i == 21){
+      that.i -= 1
+      console.log(that.i)
+      this.abled = false
+      this.quizz = true
+      this.reponse = false
+    }
+    if(that.i == 23){
       that.i -= 1
       console.log(that.i)
       this.abled = false

@@ -169,6 +169,16 @@ export default {
       this.quizz = true
       this.reponse = false
     }, 3000);
+    setTimeout(function(){
+      that.i += 1
+    }, 3000);
+    setTimeout(function(){
+      that.i += 1
+      console.log(that.i)
+      this.abled = false
+      this.quizz = true
+      this.reponse = false
+    }, 6000);
       }
       if(that.i == 23){
         setTimeout(function(){

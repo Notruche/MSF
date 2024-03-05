@@ -2,7 +2,7 @@
 </script>
 
 <template>
-<div class="gal">
+<div class="gal" v-on:click="idle()">
   <Transition name="fade">
   <div :class="{ bulle1: disabled }"  v-if="disabled==true" class="bulle">
     <img src="../public/images/x.png" class="x" v-on:click="retour()"> <br>
@@ -123,19 +123,30 @@
 <script>
 export default {
   data(){
+    var self = this;
         return {
           i: 1,
           disabled: false,
           abled:false,
           quizz:true,
           reponse:false,
-          warn: false
+          warn: false,
+          idletime: 0,
+          idlewarn(){self.warn = true},
+
         }
     },
   methods: {
     retour() {
       this.disabled = false
       this.abled = true
+    },
+    idle(){
+      var that = this
+      clearTimeout(that.idletime)
+      that.idletime = setTimeout(function(){
+        that.idlewarn()
+          },300000)
     },
     quizzrep() {
       this.quizz = false

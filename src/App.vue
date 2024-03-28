@@ -3,6 +3,9 @@
 
 <template>
 <div class="gal" v-on:click="idle()">
+  <div class="smart"><p>Bitte schalten Sie Ihr Smartphone in den horizontalen Modus</p> <br>
+    <img src="../public/images/rotate-solid.svg" class="rotate">
+  </div>
   <Transition name="fade">
   <div :class="{ bulle1: disabled }"  v-if="disabled==true" class="bulle">
     <img src="../public/images/x.png" class="x" v-on:click="retour()"> <br>
@@ -50,7 +53,7 @@
   <div class="col-10 hasimage gal">
     <div class="warning" v-if="warn">
       <div class="box pt-3">
-        <h3>Möchtest du wirklich zum Anfang des Comics zurück?</h3>
+        <p>Möchtest du wirklich zum Anfang des Comics zurück?</p>
         <button class="btn btn-success exit mt-3" v-on:click="yes()">Ja</button>
         <button class="btn btn-danger exit mt-3" v-on:click="no()">Nein</button>
       </div>
@@ -144,9 +147,11 @@ export default {
     idle(){
       var that = this
       clearTimeout(that.idletime)
+      if(that.i > 1){
       that.idletime = setTimeout(function(){
         that.idlewarn()
           },300000)
+        }
     },
     quizzrep() {
       this.quizz = false
